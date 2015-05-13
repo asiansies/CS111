@@ -1,0 +1,59 @@
+Aihoa Le (aihoale@bu.edu)
+Problem Set 2 | Part I
+
+Question 1
+i. a / b = 2.333
+   a / c = 2
+   While both expressions evaluate to 7/3, the first expression contains a double and will 
+   therefore give you an answer of type double. The second expression uses integer division so 
+   the answer will be truncated to whatever comes before the decimal point.
+ii. d / a * a = 5.0
+    (int)d / a * a = 0
+    The first expression contains a double and will be evaluated like "normal" division. The second 
+    expression converts d into an integer. In Java, with integer division, 5/7 will evaluate to 0. 
+    0 times anything is still 0.
+iii. a + b = 10.0
+     "a" + "b" = ab
+     The first expression is normal addition. The answer contains a decimal place because it is of 
+     type double. In the second expression, the characters are enclosed in quotations, turning them 
+     into strings. The second expression concatenates two strings.
+iv. 6 + 2 + " foo " = 8 foo
+    " foo " + 6 + 2 =  foo 62
+    The first expression will do the addition first and then add the string. The second expression 
+    will concatenate " foo " and 6 and proceed to concatenate the 2.
+v. b * a / c = 7.0
+   b * (a / c) = 6.0
+   The first expression evaluates from left to right. In the second expression, the inside of the 
+   parenthesis will get evaluated first and then the mulitplication will happen.
+
+Question 2
+i. k = 2 * j;
+ii. j = j + 5;
+iii. k = j % 10;
+iv.  k = j % 100 / 10;
+v. j = 6
+   k = 14
+
+Question 3
+i. 101 = 2^0 + 2^2
+       = 1 + 4
+       = 5
+   1100101 = 2^0 + 2^2 + 2^5 + 2^6
+	   = 1 + 4 + 32 + 64
+           = 5 + 32 + 64
+           = 37 + 64
+           = 101
+ii. 14 = 8 + 4 + 2
+       = 2^3 + 2^2 + 2^1
+       = 00001110   
+    57 = 32 + 16 + 8 + 1
+       = 2^5 + 2^4 + 2^3 + 2^0
+       = 00111001
+
+Question 4
+a. for (int i = 0; i < 10; i++) {
+       System.out.println("Repeat!");
+   }
+b. for (int i = 4; i <= 10; i = i + 2) { 
+       System.out.print(i + " ");
+   }

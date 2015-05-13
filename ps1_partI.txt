@@ -1,0 +1,79 @@
+Part I
+
+Question 1
+a.
+i. Expressions that produced errors:
+	'xyz'
+	'\'
+	'//'
+ii. Type of error:
+    All the expressions produce lexical errors. Java does not allow more than one character enclosed
+    in single quotes, with the exception of escape sequences.:
+    Lexical error at line 1, column 3.  Encountered: "y" (121), after : "\'x"
+    Lexical error at line 1, column 4.  Encountered: <EOF> after : "\'\\\'"
+    Lexical error at line 1, column 3.  Encountered: "/" (47), after : "\'/"
+
+b.
+i. > (int) 'd'
+	100
+   > (int) 'e'
+	101
+   > (int) 'f'
+	102
+   > (int) 'D'
+	68
+   > (int) 'E'
+	69
+   > (int) 'F'
+	70
+   > (int) '0'
+	48
+   > (int) '1'
+	49
+   > (int) '2'
+	50
+
+ii. In the coding system that Java uses, characters are assigned numbers based on numerical order and based on the order that they appear in the normal alphabet. For example, the number that is obtained for the expression '0' is 48 and the value obtained for '1' is 41. However, capital letters are assigned before lowercase letters and numbers are assigned before letters, which results in numbers have lower numbers and lowercase letters having the highest numbers.
+
+iii. > (char) 97
+	   'a'
+     > (char) 80
+	   'P'
+     > (char) 63
+	   '?'
+     > (char) ('A' + 1)
+	   'B'
+     > (char) ('A' + 2)
+	   'C'
+     > (char) ('A' + 3)
+	   'D'
+
+iv.  > (char) ('A' + 6)
+	   'G'
+
+Question 2
+a.
+public class MyProgram {
+	public static void main (String[] args) {
+    		System.out.println("I need help!");
+    		System.out.println("Can you please fix me?");
+	}
+}
+
+
+b. Names that are not valid identifiers: 3Examples, _option, public
+   Valid identifiers must begin with a letter and cannot be one of the keywords in Java.
+c. System.out.println("\"Go!\", the crowd shouted. \"Go Terriers!\"");
+   System.out.println("/\\ //\\\\ /\\");
+   System.out.println("Later they chanted, \"We're going to win!\"");
+
+Question 3
+Output:
+  Yankees
+  Red Sox
+  Yankees
+  Orioles
+  Yankees
+  Red Sox
+  Yankees
+  Orioles

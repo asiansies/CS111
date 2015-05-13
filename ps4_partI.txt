@@ -1,0 +1,47 @@
+Aihoa Le (aihoale@bu.edu)
+Problem Set 4 | Part 1
+
+Question 1
+a.     MAIN      MethodToOurMadness    output
+    -----------     ------------      --------  
+       c   d           c   d            3 4  
+    -----------     ------------        2 4
+       2   1           2   1            4 7
+           4           3   1            2 4
+      15               3   4            6 13
+                       2   2            15 4
+                       4   2
+                       4   7
+                       4   2
+                       6   2
+                       6   13
+
+b. public static double perimeter(double length, double width) {
+       double perim = (length + width) * 2;
+       return perim;
+   }
+
+c. public static void printPattern(char ch, int numRows, int numCols){
+       for(int i = 1; i <= numRows; i++){
+           for(int j = 0; j < numCols; j++){
+               System.out.print(ch);
+           }
+           System.out.println();
+       }
+   }
+
+Question 2
+a. i. "RING"
+  ii. 3
+ iii. -1
+  iv. "ING SOON!"
+   v. "ING SOON!"
+  vi. "ping"
+
+b. i. str1.toLowerCase() + str2
+  ii. str1.substring(0,6) + str2.charAt(14)
+ iii. str1.substring(0,2).toLowerCase() + str2.substring(11,14)
+  iv. str2.charAt(5)
+   v. str2.replace('s','n')
+
+c. The processString method prints a string with each letter of the string printed twice instead of once. For example, "Boston" would be printed as BBoossttoooonn and "Terriers" would be printed as TTeerrrriieerrss.

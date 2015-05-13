@@ -1,0 +1,81 @@
+Aihoa Le (aihoale@bu.edu)
+
+Problem Set 5
+Part I
+
+Question 1
+a. i. ruby
+      pearl
+      done
+  ii. ruby
+      pearl
+      done
+ iii. diamond
+      pearl
+      done
+  iv. silver
+      done
+   v. penny
+      nickel
+      done
+
+b. The line that prints "copper" will never be executed because it is inside a nested if-else 
+   statement inside an else statement. In order to get to the if-else statement that prints 
+   "copper", it must fail the test of the outermost if statement, which is a <= b. "copper" only 
+   gets printed if a < b, which we know by now is false.
+   
+   The line that prints "gold" will also never be executed because by failing the first test
+   in the outer if statement (a <= b) and passing the second test from the else if statement 
+   (b >= c), we know that a must be greater than b and b must be greater than or equal to c.
+   Therefore, a can never be greater than c, and it will fail the test to print out "gold" (a < c). 
+
+   The line that prints "dime" will also never run because it's test is a == b. It is in the
+   last else block which means that it has already failed the other two tests for a <= b
+   and b >= c. Failing the first test ( a <= b) would also mean that it would fail a == b.
+
+
+Question 2
+public static void processIntegers(int x, int y) {
+    if (x <= y) {
+        int sum = x;
+        System.out.print(x);
+        while (x < y){
+            x++;
+            System.out.print(", " + x);
+            sum += x;    
+        }
+        System.out.println();
+        System.out.println("total = " + sum);
+    }
+}
+
+
+Question 3
+a. i. 7 interations
+  ii. infinite loop
+ iii. 1 iteration
+  iv. no iterations
+   v. 4 iterations
+
+b. public static void printEvens(int a, int b) {
+        while (a % 2 == 0 && a <= b) {
+            System.out.print(a + " ");
+            a +=2;
+        }
+        System.out.println();
+    }
+
+
+Question 4
+a. while (num <= 10 || num % 2 != 0)
+b. while (num <= 10 || num >= 20)
+c. while (num != 5 && num != 10)
+d. while (num / 10 != num % 10)
+e. Scanner console = new Scanner(System.in);
+   int num;
+   boolean validInput = false;
+   while (!validInput) {
+       System.out.print("Enter a number: ");
+       num = console.nextInt();
+       validInput = num > 10;
+   }

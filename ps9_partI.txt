@@ -1,0 +1,44 @@
+Aihoa Le (aihoale@bu.edu)
+Problem Set 9 | Part I
+
+Question 1
+a. 12 10 10
+   a is not changed so a[3] is just the initial value. b and c refer to the same array object so 
+   assigning c[3] to 10 changes the value of the element of the array that both b and c refer to.
+b. public static void incrementAll(int[] data, int incr) {
+       for (int i = 0; i < data.length; i++) {
+	       data[i] = data[i] + incr;
+	   }
+   }
+c. public static boolean hasDups(int[] data) {
+       for (int i = 0; i < data.length; i++) {
+	       for (int j = i + 1; j < data.length; j++) {
+		       if (data[i] == data[j]) {
+			       return true;
+			   }
+		   }
+	   }
+	   return false;
+   }
+
+Question 2
+a. main() calls mystery(6, 6)
+       mystery(6, 6) calls mystery(6, 4)
+	       mystery(6, 4) calls mystery(5, 7)
+		       mystery(5, 7) returns 5
+		   mystery(6, 4) returns 9
+	   mystery(6, 6) returns 10
+   main()
+b. The value returned by mystery(6, 6) is 10.
+c. There are 4 method frames on the stack when the base case is reached.
+d. public static void printDecreaseIncrease(String s) {
+       if (s == null) {
+	       return;
+	   }
+	   System.out.println(s);
+	   if (s.length() > 1) {
+           printDecreaseIncrease(s.substring(0, s.length() - 1));   
+       }
+       System.out.println(s);	   
+   }
+	   

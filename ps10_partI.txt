@@ -1,0 +1,66 @@
+Aihoa Le (aihoale@bu.edu)
+Problem Set 10 | Part 1
+
+Question 2
+a. private ArrayList<File> chapters;
+b. this.chapters = new ArrayList<File>(numChapters);
+c. chapterCount is no longer needed. chapterCount manually keeps track of the number of chapters
+   added. ArrayList has a size() method which we can call to figure out the current number of 
+   values, which in this case would be the number of chapters added.
+d. public void addChapter(File chapter) {
+       this.chapters.add(chapter);
+   }
+e. public File getChapter(int chapterNum) {
+       this.chapters.get(chapterNum - 1);
+   }
+   
+Question 3
+public class MovingVan extends Truck {
+	private int distanceToCargo;
+	private boolean hasRamp;
+	
+	//A constructor for a MovingVan object.
+	public MovingVan(String make, String model, int year, int numWheels, int distanceToCargo, boolean hasRamp) {
+		super(make, model, year, numWheels);
+		
+		if (distanceToCargo <= 0) {
+			throw new IllegalArgumentException();
+		}
+		this.distanceToCargo = distanceToCargo;;
+		this.hasRamp = hasRamp;
+	}		
+	
+	//Returns the distance from the ground to the cargo area of the called MovingVan object.
+	public int getDistanceToCargo() {
+		return this.distanceToCargo;
+	}
+	
+	//Returns true if the MovingVan object has a ramp and false if it doesn't.
+	public boolean hasRamp() {
+		return this.hasRamp;
+	}
+	
+	//Returns a String representation of a MovingVan object.
+	public String toString() {
+		String s = "capacity = " + this.capacity + ", distance to cargo = " + this.distanceToCargo;
+		if (hasRamp) {
+			s += s + ", has a ramp"
+		} else {
+			s += s + ", no ramp"
+		}
+	}
+}
+
+Question 4
+a. Valid: Vehicle objects can hold references to objects that are subclasses of Vehicle. Truck is 
+   a subclass of Vehicle.
+b. Invalid: Objects can only hold references to objects of their subclasses. In this case, 
+   Automobile is a superclass of Taxi and therefore, Taxi cannot hold a reference to Automobile.
+c. Valid: Object objects can hold references to any type of object.
+
+Question 5
+a. weezow zow eekzee
+b. weeyow yow eekzee
+c. weeyow yow eekzee
+d. Does not compile. Zoo is instantiated as a Yoo so it only has access to methods from the Yoo 
+   class and Zoo class.

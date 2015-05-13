@@ -1,0 +1,76 @@
+Aihoa Le (aihoale@bu.edu)
+
+Problem Set 7
+Part 1
+
+Question 1
+a. twoD[1][2] = 12
+b. 
+for (int i = 0; i < twoD.length; i++) {
+    System.out.println(twoD[i][0]);
+}
+c.
+for (int i = 0; i < twoD[0].length; i++) {  
+    System.out.println(twoD[twoD[0].length - 1 - i][i]);
+}
+
+Question 2
+a. The method prints slashes and parentheses based on the difference of the values that are 
+   passed in. If the first value is greater than the second, it will print slashes first
+   followed by parentheses. If the second value is greater than the first, it will print 
+   parantheses first followed by backslashes. The difference between the values that are passed 
+   in determines the amount of each character that gets printed.
+b. The base case is if both parameter values are the same - in this case the difference between 
+   the two values is zero and there is nothing to print so the method just returns.
+c. No, the method checks for the base case and increases the smaller parameter until both are 
+   equal to each other. There's no way that it could produce an infinite recursion.
+d. printPattern(1, 4):
+	System.out.print("(");
+	printPattern(2, 4):
+		System.out.print("(");
+		printPattern(3, 4):
+			System.out.print("(");
+			printPattern(4, 4);
+ 			return
+		System.out.print("\\");
+	System.out.print("\\");
+   System.out.print("\\");
+e. public static void PrintPattern(int m, int n) {
+        if (m == n) {
+            return;
+        }
+
+        if (m < n) {
+            System.out.print("\\");
+            printPattern(m + 1, n);
+            System.out.print("(");     
+        } else {
+            System.out.print(")");
+            printPattern(m, n + 1);
+            System.out.print("/");
+        }
+    }
+
+Question 3
+a. main() calls mystery(5, 6)
+	mystery(5, 6) calls mystery(4, 4)
+		mystery(4, 4) calls mystery(3, 2)
+			mystery(3,2) calls mystery(2, 0)
+				mystery(2, 0) returns 2
+			mystery(3, 2) returns 2 + 2 or 4
+		mystery(4, 4) returns 4 + 4 or 8
+	mystery(5, 6) returns 6 + 8 or 14
+   main()
+b. The value returned by mystery(5, 6) is 14.
+c. There are 5 method frames on the stack when the base case is reached - 1 for main and 4
+   different frames for mystery.
+d. You would get infinite recursion if both parameters were negative values. The method
+   decreases the values of the parameters until the product becomes zero, but that only 
+   works when at least one of the parameters is a positive number. When they're both negative,
+   the method will decrease their values but they will enver reach zero, instead, they will
+   become larger negatives.
+   You will also get infinite recursion if the first parameter is negative and the second
+   parameter is an odd positive. This is because the negative first parameter will only be
+   further decreased. The second parameter, the odd positive, is decreased by 2 every
+   time the method is called. In both cases, neither parameters will reach a final value
+   of zero and therefore, the method will nto reach its base case.

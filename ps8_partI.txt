@@ -1,0 +1,62 @@
+Aihoa Le (aihoale@bu.edu)
+Problem Set 8 | Part I
+
+Question 1
+a. i. tallerThanWide would be an accessor method.
+  ii. public boolean tallerThanWide()
+b. i. adjust would be a mutator.
+  ii. public void adjust(int minWidth, int minHeight)
+c. i. The client code cannot directly access the height or width variables from the Rectangle 
+      class, therefore the third and fourth lines of the fragment code will not compile. 
+  ii. Rectangle r1 = new Rectangle(30, 50, 100, 25);
+      System.out.println(r1);
+      r1.setHeight(r1.getHeight() * 2);
+      System.out.println(r1);
+
+Question 2
+a. onEvenSide can't access num because it's a static method. Static methods do not have access
+   to the object's fields. We would need to take out the word "static" from the method header.
+b. public class StreetAddress {
+       private int num;
+       private String name;
+       
+       //A constructor that allows clients to pass in specific parameter values. It calls
+       //the mutator methods in order to error-check user inputs.
+       public StreetAddress(int num, String name) {
+           this.setNum(num);
+           this.setName(name);
+       }
+
+       //onEvenSide returns true if a house is on the even side of the street and false
+       //if it is not.
+       public boolean onEvenSide() {
+           return (this.num % 2 == 0);
+       }
+
+       //An accessor method for a StreetAddress's street number.
+       public int getNum() {
+           return (this.num);
+       }
+
+       //An accessor method for a StreetAddress's street name. 
+       public String getName() {
+           return (this.name);
+       }
+ 
+       //An mutator method that changes a StreetAddress's street number.
+       public void setNum(int num) {
+           if(num < 0) {
+               throw new IllegalArgumentException();
+           }
+           this.num = num;
+       }
+ 
+       //An mutator method that changes a StreetAddress's street name.
+       public void setName(String name) {
+           if(name.length() > 30) {
+               throw new IllegalArgumentException();
+           }
+           this.name = name;
+       }
+
+   }

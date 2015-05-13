@@ -1,0 +1,56 @@
+Aihoa Le (aihoale@bu.edu)
+
+Problem Set 3
+Part I
+1.	a. Trace of the loop:
+	------------------------------------------------
+	    i      j      value printed
+	------------------------------------------------
+	    2      2      none (exit the inner loop)
+	    4      2      6
+	    4	   3      7
+	    4      4      none
+	    6      2      8
+	    6      3      9
+	    6      4      10
+	    6      5      11  
+	    6      6      none
+	    8           
+	
+	b. for (int i = 0; i <= 3; i++) {
+               for (int j = i; j <= i && j >= 0; j--) { 
+                   System.out.println(i + " " + j);
+               }
+           }
+
+
+2. 	a. Table
+	-----------------------------
+	line   spaces   asterisks
+	-----------------------------
+	    1      0        7
+	    2      2        5
+	    3      4        3
+	    4      6        1
+
+	b. spaces = 2 * line - 2
+	   asterisks = -2 * line + 9
+
+	c. for (int line = 1; line <= 4; line++){
+               //Print spaces
+               for (int i = 0; i < 2*line - 2; i++){
+                   System.out.print(" ");
+               }
+               //Print asterisks
+               for (int i = 0; i < -2*line + 9; i++){
+                   System.out.print('*');
+               }
+	       System.out.println();
+           }
+
+3. a. The first println statement can print variables: a
+   b. The second println statement can print variables: a, b, c, d, i and j
+   c. The third println statement can print variables: a, b, c and i
+   d. The fourth println statement can print variables: a and b
+   e. The fifth println statement can print variables: x
+   f. The sixth println statement can print variables: x and y
